@@ -167,7 +167,7 @@ You should see a figure similar to the one below:
 Feel free to use the table browser to examine the various rows and columns in this table and perform additional summary statistics. Later on, after the exercise 2 (phenotype analysis) below, we will go back to this table to show how combined analysis of genotype data and phenotype data can facilitate genetic diagnosis of rare diseases.
 
 
-# Phenotype-driven prioritization of human disease genes (Phen2Gene, ClinPhen, AMELIE, etc)
+# Phenotype-driven prioritization of human disease genes (Phen2Gene, ClinPhen, AMELIE, PhenoSv, etc)
 
 Phen2Gene is a phenotype-based gene prioritization tool from HPO IDs or clinical notes on patients. In the next exercise, we will first use Phen2Gene to prioritize genes based on clinical phenotypes of patients with Mendelian diseases.
 
@@ -533,8 +533,26 @@ View (marray3);
 ```
 ![image](https://github.com/WGLab/QuantitativeGenomics2023/assets/11565618/b676bcaf-3eb6-475a-9ec3-63fd0879bf26)
 
+### 11. Run PhenoSV
+PhenoSV is an interpretable phenotype-aware model to prioritize genes affected by structural variants (SVs). PhenoSV can predict pathogenicity of all types of SVs that disrupt either coding or noncoding genome regions, including deletions, duplications, insertions, inversions, and translocations. When phenotype information is available, PhenoSV further utilizes gene-phenotype associations (Phen2Gene) to prioritize disease-related SVs.
 
-### 10. Summary of the phenotype analysis exercises
+In the next exercise, we will first use PhenoSV to score a single SV with patient's clinical phenotypes.
+
+In terminal, use command: `python3 phenosv/model/phenosv.py --c chr6 --s 156994830 --e 157006982 --svtype 'deletion' --noncoding 'tad' --HPO 'HP:0000707,HP:0007598' --model 'PhenoSV-light' `
+
+
+```
+  Elements  Pathogenicity           Type  Phen2Gene   PhenoSV
+0       SV       0.664912  Non-coding SV   0.999126  0.664331
+1   ARID1B       0.823556       Intronic   0.999126  0.822836
+2     NOX3       0.045648     Regulatory   0.837460  0.038229
+3    TFB1M       0.533431     Regulatory   0.544762  0.290593
+```
+
+
+
+
+### 12. Summary of the phenotype analysis exercises
 
 In summary, a number of computational tools such as Phen2Gene, AMELIE and GADO can perform phenotype-driven gene prioritization. Phen2Gene provides webserver or API, or you can install and run locally (which is important to deploy it in batch processing mode), and it does not require a list of random genes to run either.
 

@@ -90,7 +90,7 @@ Note that in the commands above, we rename the directory to "VCF_files" just to 
 
 Run ANNOVAR on the VCF file:
 ```
-perl table_annovar.pl VCF_files/proband.vcf humandb/ -buildver hg19 -out proband.annovar -remove -protocol refGeneWithVer,gnomad211_exome -operation g,f -nastring . -vcfinput
+perl table_annovar.pl VCF_files/proband.vcf humandb/ -buildver hg19 -out proband.annovar -remove -protocol refGeneWithVer,gnomad211_exome,dbnsfp47a -operation g,f,f -nastring . -vcfinput
 ```
 
 The `proband.annovar.hg19_multianno.txt` file contains annotations for this exome.

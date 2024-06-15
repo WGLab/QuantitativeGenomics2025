@@ -56,7 +56,7 @@ Please note that this is a sub-sampled version of ANNOVAR for the purpose of th 
 Type `cd exercise1` to enter the `exercise1` directory. The sub-folder `humandb` folder already contains several annotation databases for human genome that we will use in our exercise. (Note that users can find more annotation databases [here](https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/#-for-filter-based-annotation).
 
 ```
-perl table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remove -protocol refGeneWithVer,cytoBand,gnomad211_exome -operation g,r,f -nastring . -vcfinput -polish
+perl table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remove -protocol refGeneWithVer,cytoBand,gnomad211_exome,dbnsfp47 -operation g,r,f,f -nastring . -vcfinput -polish
 ```
 
 After that, you will find the result files `myanno.hg19_multianno.txt` and `myanno.hg19_multianno.vcf`.

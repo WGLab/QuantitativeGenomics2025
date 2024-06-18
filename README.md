@@ -168,7 +168,8 @@ You should see a figure similar to the one below:
 
 Next, we examine the allele frequency distributions stratified by SIFT scores, which predict the impact of amino acid substitutions on protein function based on sequence homology and the physical properties of amino acids. We expect variants associated with more deleterious effects to be rarer.
 
-```
+```{r}
+#visualize allele frequency stratified by SIFT scores
 res_deleterious = res[res$SIFT_score > 0.9 & !is.na(res$SIFT_score),];dim(res_deleterious)
 res_benign = res[res$SIFT_score<0.5 & !is.na(res$SIFT_score),];dim(res_benign)
 par(mar=c(2.5, 4.5, 1.5, 1.5)+2,mfrow=c(1,1))

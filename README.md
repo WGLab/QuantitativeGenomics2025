@@ -113,7 +113,7 @@ setwd("/cloud/project/genomics_exercise/exercise1")
 Check variant distribution across chromesomes:
 ```{r}
 #load data
-res <- read.table("proband.annovar.hg19_multianno.txt", fill=T, header=T, sep="\t", na.strings = ".")
+res <- read.table("proband.annovar.hg19_multianno.txt", fill=T, header=T, sep="\t", na.strings = ".", quote="")
 
 #visualize variant frequency
 par(mar=c(5.1, 4.1, 4.1, 2.1),mfrow=c(1,1))

@@ -186,6 +186,20 @@ legend(x=0.6, y=115, legend=c("SIFT < 0.05", "SIFT > 0.05"), col=c("red", "blue"
 You should see a figure similar to the one below:
 <img width="791" alt="image" src="https://github.com/WGLab/QuantitativeGenomics2024/assets/27308407/c36d22d0-06c6-4087-8214-6614e62da2d0">
 
+We next use `ggplot2` package to compare allele frequency distributions stratified by two other predictive scores: MetaRNN and AlphaMissense. We can similarly find lower allele frequencies for predicted pathogenic variants (MetaRNN: T(olerated) and D(amaging), AlphaMissense: likely (B)enign, (A)mbiguous, or likely (P)athogenic ).
+
+```
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+a = ggplot(res%>%filter(is.na(MetaRNN_pred)==F),aes(x = MetaRNN_pred, y = AF))+
+  geom_boxplot(width = 0.3)+theme_classic()+ggtitle('MetaRNN_pred')
+b = ggplot(res%>%filter(is.na(AlphaMissense_pred)==F),aes(x = AlphaMissense_pred, y = AF))+
+  geom_boxplot(width = 0.3)+theme_classic()+ggtitle('AlphaMissense_pred')
+ggarrange(a,b,ncol=2)
+```
+
+<img width="1117" alt="image" src="https://github.com/WGLab/QuantitativeGenomics2024/assets/27308407/3f13d1af-f165-4449-8af2-e6c77ecaa655">
 
 Feel free to use the table browser to examine the various rows and columns in this table and perform additional summary statistics. Later on, after the exercise 2 (phenotype analysis) below, we will go back to this table to show how combined analysis of genotype data and phenotype data can facilitate genetic diagnosis of rare diseases.
 

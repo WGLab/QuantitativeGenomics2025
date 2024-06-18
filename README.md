@@ -171,19 +171,20 @@ Next, we examine the allele frequency distributions stratified by SIFT scores, w
 ```
 res_deleterious = res[res$SIFT_score > 0.9 & !is.na(res$SIFT_score),];dim(res_deleterious)
 res_benign = res[res$SIFT_score<0.5 & !is.na(res$SIFT_score),];dim(res_benign)
-par(mar=c(2, 4, 1, 1),mfrow=c(1,1))
+par(mar=c(2.5, 4.5, 1.5, 1.5)+2,mfrow=c(1,1))
 hist_deleterious <- hist(as.numeric(res_deleterious$AF), breaks=seq(0, 1, 0.001), plot = FALSE)
 hist_benign <- hist(as.numeric(res_benign$AF), breaks=seq(0, 1, 0.001), plot = FALSE)
 plot(hist_deleterious, col=rgb(1, 0, 0, 0.5), ylim=c(0, max(c(hist_deleterious$counts, hist_benign$counts))), 
      xlab="Allele Frequency", ylab="Frequency", main="Allele Frequency Distribution", xlim=c(0, 1),
      border=NA)
 plot(hist_benign, col=rgb(0, 0, 1, 0.5), add=T,border=NA)
-legend(x=0.7, y=140, legend=c("SIFT > 0.9", "SIFT < 0.5"), col=c("red", "blue"), 
+legend(x=0.6, y=145, legend=c("SIFT > 0.9", "SIFT < 0.5"), col=c("red", "blue"), 
        fill=c(rgb(1, 0, 0, 0.5), rgb(0, 0, 1, 0.5)),border=NA)
 ```
 
 You should see a figure similar to the one below:
-<img width="769" alt="image" src="https://github.com/WGLab/QuantitativeGenomics2024/assets/27308407/43827240-b369-4f58-a46b-080fdb242f63">
+<img width="717" alt="image" src="https://github.com/WGLab/QuantitativeGenomics2024/assets/27308407/f30821dc-4ea7-4907-8908-469072b16050">
+
 
 
 

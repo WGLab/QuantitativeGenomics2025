@@ -538,6 +538,20 @@ PhenoSV is an interpretable phenotype-aware model to prioritize genes affected b
 
 In the next exercise, we will first use PhenoSV to score a single SV with patient's clinical phenotypes.
 
+We need to install database files for PhenoSV to run. This step takes about 15min to finish.
+
+```
+cd /var/tmp
+wget https://www.openbioinformatics.org/PhenoSV/PhenosvlightFile.tar
+tar -xvf "PhenosvlightFile.tar"
+rm "PhenosvlightFile.tar"
+wget https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip
+unzip -q "H2GKBs.zip"
+rm "H2GKBs.zip"
+cd "/cloud/project/genomics_exercise/exercise3/PhenoSV"
+python3 phenosv/setup.py --path "/var/tmp/data"
+```
+
 In terminal, use command: `python3 phenosv/model/phenosv.py --c chr6 --s 156994830 --e 157006982 --svtype 'deletion' --noncoding 'tad' --HPO 'HP:0000707,HP:0007598' --model 'PhenoSV-light' `
 
 

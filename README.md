@@ -166,7 +166,7 @@ You should see a figure similar to the one below:
 
 
 
-Next, we examine the allele frequency distributions stratified by SIFT scores, which predict the impact of amino acid substitutions on protein function based on sequence homology and the physical properties of amino acids. We expect variants associated with more deleterious effects to be rarer.
+Next, we examine the allele frequency distributions stratified by SIFT scores, which predict the impact of amino acid substitutions on protein function based on sequence homology and the physical properties of amino acids. We expect variants associated with more deleterious effects (SIFT score < 0.05) to be rarer.
 
 ```{r}
 #visualize allele frequency stratified by SIFT scores

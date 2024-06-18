@@ -164,6 +164,29 @@ You should see a figure similar to the one below:
 
 ![image](https://user-images.githubusercontent.com/11565618/123002260-ba030700-d37f-11eb-811b-54eb98fb0c73.png)
 
+
+
+Next, we examine the allele frequency distributions stratified by SIFT scores, which predict the impact of amino acid substitutions on protein function based on sequence homology and the physical properties of amino acids. We expect variants associated with more deleterious effects to be rarer.
+
+```
+res_deleterious = res[res$SIFT_score > 0.9 & !is.na(res$SIFT_score),];dim(res_deleterious)
+res_benign = res[res$SIFT_score<0.5 & !is.na(res$SIFT_score),];dim(res_benign)
+par(mar=c(2, 4, 1, 1),mfrow=c(1,1))
+hist_deleterious <- hist(as.numeric(res_deleterious$AF), breaks=seq(0, 1, 0.001), plot = FALSE)
+hist_benign <- hist(as.numeric(res_benign$AF), breaks=seq(0, 1, 0.001), plot = FALSE)
+plot(hist_deleterious, col=rgb(1, 0, 0, 0.5), ylim=c(0, max(c(hist_deleterious$counts, hist_benign$counts))), 
+     xlab="Allele Frequency", ylab="Frequency", main="Allele Frequency Distribution", xlim=c(0, 1),
+     border=NA)
+plot(hist_benign, col=rgb(0, 0, 1, 0.5), add=T,border=NA)
+legend(x=0.7, y=140, legend=c("SIFT > 0.9", "SIFT < 0.5"), col=c("red", "blue"), 
+       fill=c(rgb(1, 0, 0, 0.5), rgb(0, 0, 1, 0.5)),border=NA)
+```
+
+You should see a figure similar to the one below:
+<img width="769" alt="image" src="https://github.com/WGLab/QuantitativeGenomics2024/assets/27308407/43827240-b369-4f58-a46b-080fdb242f63">
+
+
+
 Feel free to use the table browser to examine the various rows and columns in this table and perform additional summary statistics. Later on, after the exercise 2 (phenotype analysis) below, we will go back to this table to show how combined analysis of genotype data and phenotype data can facilitate genetic diagnosis of rare diseases.
 
 

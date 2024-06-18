@@ -561,7 +561,7 @@ View (marray3);
 ### 11. Run PhenoSV
 PhenoSV is an interpretable phenotype-aware model to prioritize genes affected by structural variants (SVs). PhenoSV can predict pathogenicity of all types of SVs that disrupt either coding or noncoding genome regions, including deletions, duplications, insertions, inversions, and translocations. When phenotype information is available, PhenoSV further utilizes gene-phenotype associations (Phen2Gene) to prioritize disease-related SVs.
 
-In the next exercise, we will first use PhenoSV to score a single SV with patient's clinical phenotypes.
+For small SVs, we can use the web server ([PhenoSV](https://phenosv.wglab.org).) to score and interpret SVs. PhenoSV also offers a command-line tool. In the next exercise, we will use PhenoSV to score a single SV with patient's clinical phenotypes.
 
 We need to install database files for PhenoSV to operate. Note that the databases are large and may require more than 15 minutes to complete the installation.
 

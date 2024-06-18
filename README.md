@@ -549,7 +549,7 @@ wget https://github.com/WGLab/Phen2Gene/releases/download/1.1.0/H2GKBs.zip
 unzip -q "H2GKBs.zip"
 rm "H2GKBs.zip"
 cd "/cloud/project/genomics_exercise/exercise3/PhenoSV"
-python3 phenosv/setup.py --path "/var/tmp/data"
+bash update_config.sh /var/tmp
 ```
 
 In terminal, use command: `python3 phenosv/model/phenosv.py --c chr6 --s 156994830 --e 157006982 --svtype 'deletion' --noncoding 'tad' --HPO 'HP:0000707,HP:0007598' --model 'PhenoSV-light' `
@@ -557,10 +557,10 @@ In terminal, use command: `python3 phenosv/model/phenosv.py --c chr6 --s 1569948
 
 ```
   Elements  Pathogenicity           Type  Phen2Gene   PhenoSV
-0       SV       0.664912  Non-coding SV   0.999126  0.664331
-1   ARID1B       0.823556       Intronic   0.999126  0.822836
-2     NOX3       0.045648     Regulatory   0.837460  0.038229
-3    TFB1M       0.533431     Regulatory   0.544762  0.290593
+0       SV       0.607864  Non-coding SV   0.999126  0.607332
+1   ARID1B       0.550785       Intronic   0.999126  0.550304
+2     NOX3       0.155716     Regulatory   0.837460  0.130406
+3    TFB1M       0.249238     Regulatory   0.544762  0.135775
 ```
 
 

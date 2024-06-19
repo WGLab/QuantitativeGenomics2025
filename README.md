@@ -63,7 +63,7 @@ After that, you will find the result files `myanno.hg19_multianno.txt` and `myan
 
 The `-protocol` and the `-operation` arguments are the most important one to understand here. Protocol lists a set of tasks that you want to use for annotation, composed of a list of comma-separated keywords. Operation specifies the type of annotations that each step in the protocol uses, composed of a list of comma-separated letters such as `g`, `r` and `f`, corresponding to gene-based, region-based and filter-based annotations, respectively.
 
-In the command above, we specified a protocol with three annotation tasks, including RefGene annotation (a gene-based annotation), cytogenetic band annotation (a region-based annotation), and allele frequency in gnoMAD version 2.1.1 (a filter-based annotation). These three types of annotation are indicated as `g`, `r` and `f` in the -operation argument, respectively. We also specify that dots ('.') be used to indicate lack of information, so variants that are not observed in the database will have '.' as the annotation. The `-vcfinput` argument specifies that the input file is in VCF format. We also specify that the output file names should have "myanno" as the prefix, to make it easier to check output files.
+In the command above, we specified a protocol with three annotation tasks, including RefGene annotation (a gene-based annotation), cytogenetic band annotation (a region-based annotation), allele frequency in gnoMAD version 2.1.1 (a filter-based annotation), and functional prediction from [dbNSFP database](https://sites.google.com/site/jpopgen/dbNSFP) version 4.7 as filter-based annotation. These three types of annotation are indicated as `g`, `r` and `f` in the -operation argument, respectively. We also specify that dots ('.') be used to indicate lack of information, so variants that are not observed in the database will have '.' as the annotation. The `-vcfinput` argument specifies that the input file is in VCF format. We also specify that the output file names should have "myanno" as the prefix, to make it easier to check output files.
 
 If you have Excel installed, you can open the `hg19_multianno.txt` file by Excel and examine the various tab-delimited fields. Since we are using Rstudio now, we could also easily import the tab-delimited file into Rstudio to examine the various rows and columns. We will do this later to filter and prioritize disease-relevant variants.
 
@@ -204,15 +204,13 @@ ggarrange(a,b,ncol=2)
 Feel free to use the table browser to examine the various rows and columns in this table and perform additional summary statistics. Later on, after the exercise 2 (phenotype analysis) below, we will go back to this table to show how combined analysis of genotype data and phenotype data can facilitate genetic diagnosis of rare diseases.
 
 
-# Phenotype-driven prioritization of human disease genes (Phen2Gene, ClinPhen, AMELIE, PhenoSv, etc)
+# Phenotype-driven prioritization of human disease genes (Phen2Gene, ClinPhen, AMELIE, PhenoSV, etc)
 
 Phen2Gene is a phenotype-based gene prioritization tool from HPO IDs or clinical notes on patients. In the next exercise, we will first use Phen2Gene to prioritize genes based on clinical phenotypes of patients with Mendelian diseases.
 
 We will do the exercise in a directory called `exercise2`. In the terminal, assuming that you are currently in the `exercise1` directory (you can use `pwd` to check this), you can use command `cd ../exercise2` to go into the exercise2 directory.
 
-There are three ways to run Phen2Gene: download and run it locally (need a few GB of space), using 
-
-and using Phen2Gene website.
+There are a few ways to run Phen2Gene: run it locally (need a few GB of space), use the Phen2Gene API and use Phen2Gene website.
 
 The benefit of running Phen2Gene is if you do not have any idea of a candidate gene for your disease, you can use it in one of three scenarios:
 
@@ -619,3 +617,4 @@ In summary, a number of computational tools such as Phen2Gene, AMELIE and GADO c
 - [ClinPhen](https://www.nature.com/articles/s41436-018-0381-1): Deisseroth, C. A. et al. ClinPhen extracts and prioritizes patient phenotypes directly from medical records to expedite genetic disease diagnosis. Genet. Med. 21:1585–1593 (2019).
 - [PhenCards](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-021-00909-8): Havrilla, J.M. et al. PhenCards: a data resource linking human phenotype information to biomedical knowledge. Genom. Med. 13:91 (2021)
 - [OARD](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9502051/): Liu, C. et al. OARD: Open annotations for rare diseases and their phenotypes based on real-world data. Am. J. Hum. Genet. 109(9): 1591–1604, (2022)
+- [PhenoSV](https://www.nature.com/articles/s41467-023-43651-y): Xu Z, Li Q, Marchionni L and Wang K. PhenoSV: interpretable phenotype-aware model for the prioritization of genes affected by structural variants. Nat. Commun. 14:7805 (2023)

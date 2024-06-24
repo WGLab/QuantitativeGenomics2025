@@ -95,7 +95,7 @@ perl table_annovar.pl VCF_files/proband.vcf humandb/ -buildver hg19 -out proband
 
 The `proband.annovar.hg19_multianno.txt` file contains annotations for this exome.
 
-Now compare this command from the previous table_annovar.pl command, we can see that this type we only request two annotation tasks (refGeneWithVer and gnomad211_exome), which are gene-based and filter-based annotations, respectively.
+Now compare this command from the previous table_annovar.pl command, we can see that this type we only request a few annotation tasks (refGeneWithVer and gnomad211_exome and dbnsfp47a), which are gene-based, filter-based and filter-based annotations, respectively.
 
 
 ### 4. Results visualization

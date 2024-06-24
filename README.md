@@ -1,5 +1,5 @@
 # Introduction
-This repository contains the course materials for hands-on exercise of the "Variants Annotation and Phenotype Analysis" session in the Quantitative Genomics workshop at Columbia University on June 24-25, 2024.
+This repository contains the [course materials](https://www.dropbox.com/scl/fo/f2d24v4uvat7zdlql4mxv/AEb0H7qbpfGaweACbBCy15g?rlkey=3yuqwmk68f1fkwyr0mum9xc26&st=x418geyy&dl=0) for hands-on exercise of the "Variants Annotation and Phenotype Analysis" session in the Quantitative Genomics workshop at Columbia University on June 24-25, 2024. 
 
 # Preparation of computing environment
 Both the lectures and hands-on exercises will be taught via Zoom video conference online. To ensure the cross-platform compatibility, we will only use Rstudio Cloud to implement tools that are developed in Perl and Python.

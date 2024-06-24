@@ -71,7 +71,7 @@ If you have Excel installed, you can open the `hg19_multianno.txt` file by Excel
 
 Next, we want to download a VCF file and then run ANNOVAR on this file.
 
-In the `exercise1` folder:
+In the `exercise1` folder: (you don't actually need to run this step during the course)
 
 ```
 wget http://molecularcasestudies.cshlp.org/content/suppl/2016/10/11/mcs.a001131.DC1/Supp_File_2_KBG_family_Utah_VCF_files.zip -O Supp_File_2_KBG_family_Utah_VCF_files.zip

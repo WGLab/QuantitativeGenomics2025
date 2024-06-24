@@ -53,7 +53,7 @@ Please note that this is a sub-sampled version of ANNOVAR for the purpose of th 
 
 ### 2. Run ANNOVAR on a small VCF file
 
-Type `cd exercise1` to enter the `exercise1` directory. The sub-folder `humandb` folder already contains several annotation databases for human genome that we will use in our exercise. (Note that users can find more annotation databases [here](https://doc-openbio.readthedocs.io/projects/annovar/en/latest/user-guide/download/#-for-filter-based-annotation).
+Type `cd exercise1` to enter the `exercise1` directory. The sub-folder `humandb` folder already contains several annotation databases for human genome that we will use in our exercise. (Note that users can find more annotation databases [here](https://github.com/WGLab/doc-ANNOVAR/blob/master/docs/user-guide/download.md).
 
 ```
 perl table_annovar.pl example/ex2.vcf humandb/ -buildver hg19 -out myanno -remove -protocol refGeneWithVer,cytoBand,gnomad211_exome,dbnsfp47a -operation g,r,f,f -nastring . -vcfinput -polish

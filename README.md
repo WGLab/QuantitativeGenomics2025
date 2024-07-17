@@ -427,7 +427,7 @@ top100 <- read.table("out/output_file.associated_gene_list", header=T)
 top100 <- top100$Gene[1:100]
 
 # Load results of ANNOVAR
-res <- read.table("../exercise1/proband.annovar.hg19_multianno.txt", fill=T, header=T, sep="\t", na.strings = ".")
+res <- read.table("../exercise1/proband.annovar.hg19_multianno.txt", fill=T, header=T, sep="\t", na.strings = ".", quote="")
 
 # Filtering ANNOVAR annotations based on Phen2Gene output
 res$Gene.refGeneWithVer

@@ -5,20 +5,10 @@ This repository contains the course materials for hands-on exercise of the "Vari
 Both the lectures and hands-on exercises will be taught via Zoom video conference online. To ensure the cross-platform compatibility, we will only use Rstudio Cloud to implement tools that are developed in Perl and Python.
 
 Students need to go to [Posit Cloud](https://posit.cloud/) to create your own account before the lectures: 
-1. click 'Sign up' on the top-right corner
-![image](https://github.com/WGLab/QuantitativeGenomics2023/assets/11565618/6cbaa160-c984-46eb-8960-8783d3a84a37)
 
-2. select "Free" and click "Sign up" at the right panel. 
-![image](https://github.com/WGLab/QuantitativeGenomics2023/assets/11565618/e681015d-7d7c-4bce-a766-936f78b56d63)
+After you are added to "2025 Genomics Labs" space, you can click "Annotation" project to start the exercise. The direct link is provided in Slack channel. 
 
-3. After you input your information, click "Sign up". 
-<img src="https://user-images.githubusercontent.com/16017780/122824633-f0248600-d2ae-11eb-9bd1-a72b8f03383b.png" width="200" height="300">
-
-If you logout after signing up, you can go to [RStudio Cloud](https://rstudio.cloud/) and login with your username and password. After you are added to "2024 Quantitative Genomics" project, you can click "Annotation2024" to start the exercise. The direct link is provided in Slack channel. 
-
-![image](https://github.com/WGLab/QuantitativeGenomics2024/assets/5926328/2dea9712-f74b-42ce-8394-9458ba2c562f)
-
-When the student opens an assignment project, RStudio Cloud will automatically make a copy for them. In other words, each student will work on your own copy of the virtual machine without influencing each other's files.
+When the student opens an assignment project, Posit Cloud will automatically make a copy for them. In other words, each student will work on your own copy of the virtual machine without influencing each other's files.
 
 By default, you will be in "Console" as shown below where you can run R code.
 
